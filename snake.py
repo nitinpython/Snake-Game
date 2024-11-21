@@ -224,9 +224,16 @@ class SnakeGame:
             # Keyboard events
             elif event.type == KEYDOWN:
 
-                # Start the game
+                # Handling Spacebar keypress
                 if event.key == K_SPACE:
-                    self.playing = True
+
+                    # If already playing the game, pause it
+                    if self.playing:
+                        self.playing = False
+
+                    # Resume the game
+                    elif not self.playing:
+                        self.playing = True 
 
                 # Move the snake according to the arrow keys
                 if self.playing:
